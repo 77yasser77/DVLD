@@ -1,0 +1,6 @@
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.dll
+C:\Users\yasee\source\repos\FullRealProgect\ContactsDataAccessLayer\obj\Debug\ContactsDataAccessLayer.pdb

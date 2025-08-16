@@ -1,0 +1,9 @@
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.dll
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\bin\Debug\ContactsBusinessLayer.pdb
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.dll
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\bin\Debug\ContactsDataAccessLayer.pdb
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.AssemblyReference.cache
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\obj\Debug\Contacts.DFB66D76.Up2Date
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.dll
+C:\Users\yasee\source\repos\FullRealProgect\ContactsBusinessLayer\obj\Debug\ContactsBusinessLayer.pdb
