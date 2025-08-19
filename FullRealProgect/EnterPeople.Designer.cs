@@ -34,8 +34,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.linkImage = new System.Windows.Forms.LinkLabel();
-            this.picImage = new System.Windows.Forms.PictureBox();
             this.comdbCountry = new System.Windows.Forms.ComboBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -70,10 +68,10 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.label13 = new System.Windows.Forms.Label();
             this.labID = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
+            this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
+            this.ucImage = new MyControlsLibrary.UserControl1();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -137,28 +135,6 @@
             this.label9.Size = new System.Drawing.Size(102, 22);
             this.label9.TabIndex = 79;
             this.label9.Text = "FirstName";
-            // 
-            // linkImage
-            // 
-            this.linkImage.AutoSize = true;
-            this.linkImage.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkImage.Location = new System.Drawing.Point(958, 421);
-            this.linkImage.Name = "linkImage";
-            this.linkImage.Size = new System.Drawing.Size(102, 24);
-            this.linkImage.TabIndex = 78;
-            this.linkImage.TabStop = true;
-            this.linkImage.Text = "Set Image";
-            this.linkImage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkImage_LinkClicked);
-            // 
-            // picImage
-            // 
-            this.picImage.Image = global::FullRealProgect.Properties.Resources.ManPicture11;
-            this.picImage.Location = new System.Drawing.Point(893, 164);
-            this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(257, 232);
-            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picImage.TabIndex = 77;
-            this.picImage.TabStop = false;
             // 
             // comdbCountry
             // 
@@ -482,11 +458,6 @@
             this.openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp|All Files|*.*";
             this.openFileDialog1.Title = "الرجاء اختيار صورة";
             // 
-            // fileSystemWatcher1
-            // 
-            this.fileSystemWatcher1.EnableRaisingEvents = true;
-            this.fileSystemWatcher1.SynchronizingObject = this;
-            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -507,10 +478,25 @@
             this.labID.TabIndex = 87;
             this.labID.Text = "???";
             // 
+            // fileSystemWatcher1
+            // 
+            this.fileSystemWatcher1.EnableRaisingEvents = true;
+            this.fileSystemWatcher1.SynchronizingObject = this;
+            // 
+            // ucImage
+            // 
+            this.ucImage.ImagePath = "";
+            this.ucImage.Location = new System.Drawing.Point(886, 173);
+            this.ucImage.MaximumSize = new System.Drawing.Size(326, 340);
+            this.ucImage.Name = "ucImage";
+            this.ucImage.Size = new System.Drawing.Size(259, 269);
+            this.ucImage.TabIndex = 88;
+            // 
             // EnterPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ucImage);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dateTimePicker2);
@@ -519,8 +505,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.linkImage);
-            this.Controls.Add(this.picImage);
             this.Controls.Add(this.comdbCountry);
             this.Controls.Add(this.pictureBox11);
             this.Controls.Add(this.pictureBox10);
@@ -557,7 +541,6 @@
             this.Name = "EnterPeople";
             this.Size = new System.Drawing.Size(1167, 650);
             this.Load += new System.EventHandler(this.EnterPeople_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -583,8 +566,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.LinkLabel linkImage;
-        private System.Windows.Forms.PictureBox picImage;
         private System.Windows.Forms.ComboBox comdbCountry;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -619,8 +600,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Label labID;
         private System.Windows.Forms.Label label13;
+        private System.IO.FileSystemWatcher fileSystemWatcher1;
+        private MyControlsLibrary.UserControl1 ucImage;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactsBusinessLayer;
 using MyFirstClassLibrary;
+using MyControlsLibrary;
 namespace FullRealProgect
 {
     public partial class Form1 : Form
@@ -17,12 +18,14 @@ namespace FullRealProgect
         {
             InitializeComponent();
         }
-        EnterPeople E = new EnterPeople(1045);
+       EnterPeople E = new EnterPeople(1033);
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Controls.Add(E);
+           butApplications.text="التطبيقات";
+            button2.text = "الناس";
+         this.Controls.Add(E);
 
-         
+            butApplications.Text = "التطبيقات";
         }
 
         private void enterPeople1_Load(object sender, EventArgs e)
@@ -30,17 +33,21 @@ namespace FullRealProgect
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Load(object sender, EventArgs e)
         {
-           if(clsPeople.Delete(1045,E.ImagePath))
-            {
-                MessageBox.Show("تم حذف الكنترل");
-            }
-            else
-            {
-                MessageBox.Show("هناك مشكله");
 
-            }
         }
+
+        private void userControl11_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void button2_Load(object sender, EventArgs e)
+        {
+
+           
+        }
+
+     
     }
 }

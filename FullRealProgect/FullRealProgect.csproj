@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MyControlsLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MyFirstClassLibrary\MyControlsLibrary\bin\Debug\MyControlsLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="MyFirstClassLibrary">
       <HintPath>..\..\MyFirstClassLibrary\MyFirstClassLibrary\bin\Debug\MyFirstClassLibrary.dll</HintPath>
     </Reference>
@@ -49,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Button.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Button.Designer.cs">
+      <DependentUpon>Button.cs</DependentUpon>
+    </Compile>
     <Compile Include="EnterPeople.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Button.resx">
+      <DependentUpon>Button.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterPeople.resx">
       <DependentUpon>EnterPeople.cs</DependentUpon>
     </EmbeddedResource>

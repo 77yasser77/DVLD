@@ -17,3 +17,6 @@ C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\ContactsDa
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\ContactsDataAccessLayer.pdb
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyFirstClassLibrary.dll
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyFirstClassLibrary.pdb
+C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\obj\Debug\FullRealProgect.Button.resources
+C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyControlsLibrary.dll
+C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyControlsLibrary.pdb
