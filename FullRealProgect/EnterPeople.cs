@@ -1,20 +1,21 @@
 ﻿using ContactsBusinessLayer;
 using FullRealProgect.Properties;
+using MyFirstClassLibrary;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MyFirstClassLibrary;
-using System.Diagnostics.Eventing.Reader;
 namespace FullRealProgect
 {
     public partial class EnterPeople : UserControl
@@ -45,10 +46,6 @@ namespace FullRealProgect
         clsPeople _People = new clsPeople();
         //}
 
-        //this is property to get the ID of the People {
-       public int PeopleId { get { return _People.ID; } } //}
-
-
         private void changePic(bool G)
         {  //this code to change picture in the picture box if it comes Gender Value from the database
             switch (G)
@@ -70,22 +67,23 @@ namespace FullRealProgect
 
        private void radbMale_CheckedChanged(object sender, EventArgs e)
         {//if you change the radio Button will change the picture in the picImage to Man
-            _Gendr = true;
-            if(ucImage.ImagePath== Resources.WomnePictuer.ToString())
-                ucImage.ImagePath = Resources.ManPicture1.ToString();
-        }
+            _Gendr = true; 
+          //  if (ucImaged.ImagePath ==null|| ucImaged.ImageSettings== @"C:\Users\yasee\Pictures\Igone FullRealyProject\WomnePictuer.png")
+            //   ucImaged.ImageSettings = @"C:\Users\yasee\Pictures\Igone FullRealyProject\ManPicture11.png";
+        }                           
 
         private void radbFemale_CheckedChanged(object sender, EventArgs e)
         {//if you change the radio Button will change the picture in the picImage to Women
-            _Gendr = false;
-            if(ucImage.ImagePath == Resources.ManPicture.ToString())
-                ucImage.ImagePath = Resources.WomnePictuer.ToString();
+            _Gendr = false; 
+           /// if (ucImaged.ImagePath == null || ucImaged.ImageSettings == @"C:\Users\yasee\Pictures\Igone FullRealyProject\ManPicture11.png")
+              //  ucImaged.ImageSettings = @"C:\Users\yasee\Pictures\Igone FullRealyProject\WomnePictuer.png";
+
         }
 
 
 
 
-      
+
 
         //this code to get all the countries from the database and fill the combobox with them 
         //{
@@ -122,14 +120,16 @@ namespace FullRealProgect
             if (!string.IsNullOrEmpty(_People.ImagePath))
             {
                 if (File.Exists(_People.ImagePath)) {
-                  
-                    ucImage.ImagePath = _People.ImagePath; //Image.FromFile(_People.ImagePath) The code loads the image directly into memory.
+
+                    ucImaged.ImagePath = _People.ImagePath; //Image.FromFile(_People.ImagePath) The code loads the image directly into memory.
                    }
                 else
                 {
                     MessageBox.Show("الصور غير موجده في مجلد الصور", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            changePic(_Gendr); // Change the Gendr
+
         }
 
         private void cobyDataToolsToClsPeople()
@@ -146,13 +146,14 @@ namespace FullRealProgect
             _People.Phone = txtbPhone.Text.ToString();
             _People.Email = txtEmail.Text.ToString();
             _People.NationaltyCountryID = (int)comdbCountry.SelectedValue;
-         
-                if (ucImage.ImagePath != "")
-                {
-                     _People.ImagePath = ucImage.ImagePath.ToString(); // Set the new image path
-                MyToolsLibrary.CobyFileToFolder(ucImage.ImagePath, _destinationFolderPath);
-                MessageBox.Show(ucImage.OldImagePath.ToString());
-                if (!MyToolsLibrary.FileDeleting(ucImage.OldImagePath))
+
+            if (ucImaged.OldImagePath != null)
+            {
+                _People.ImagePath = ucImaged.ImagePath; // Set the new image path
+                MyToolsLibrary.CobyFileToFolder(ucImaged.ImagePath, _destinationFolderPath);
+                MessageBox.Show(ucImaged.OldImagePath.ToString() + "هذا رابط الكود القديم ");
+
+                if (!ucImaged.DeleteOldImagePath)
                 {
                     MessageBox.Show("لم يتم ايجاد الصوره القديمه");
 
@@ -165,26 +166,26 @@ namespace FullRealProgect
 
                 MessageBox.Show("حفظ مسار الصوره في قواعد البيانات بناح");
             }
-                else
-            {
-                MessageBox.Show("مسار الصور في قواعد البيانات تساوي نل ");
-                _People.ImagePath = null; 
-                }
-           
-          
-            
-       
-            
-            
+
+
+
+
+
+
+
         }
         //this code loads the form and sets default values for controls When the control is started{
        
         private void EnterPeople_Load(object sender, EventArgs e)
         {
-           
 
 
-            MyToolsLibrary.FolderAdding(_destinationFolderPath);//Ensure the folder exists or create it if it doesn't
+            if (_People.ID > 0)
+            {
+                _Mode = enMode.Edit;
+            }
+            else { _Mode = enMode.Add; }
+                MyToolsLibrary.FolderAdding(_destinationFolderPath);//Ensure the folder exists or create it if it doesn't
             
             // this code to set the DateTimePicker to the date and time before 18 years
             MyToolsLibrary.DateTimePickerMaxDateTodayDateMinusNumberYears(dateTimePicker2, 18);
@@ -197,23 +198,19 @@ namespace FullRealProgect
                 labID.Text = "???";
 
             }
-            else if (_Mode == enMode.Edit)
+            else if (_People != null)
             {
-
-                if (_People != null)
-                {
-                    cobyDataClsPeopleToTools();
-                    changePic(_Gendr); // Change the picture based
-
-                }
-                else
-                {
-                    MessageBox.Show("No data found for the given ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                cobyDataClsPeopleToTools();
+               
+            }
+            else
+            {
+                MessageBox.Show("No data found for the given ID.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             }
 
-        }//}
+        //}
        
     
 
@@ -239,40 +236,22 @@ namespace FullRealProgect
 
      
 
-        private bool SeveCobyImageToFolder(string ImagePath, string CobyImagePath)
-        {
-
-
-            try
-            {
-                //copy the image to the new path
-                File.Copy(ImagePath, CobyImagePath, true);
-             
-            }
-            catch (Exception ex)
-            {
-        
-                MessageBox.Show("فشل في النسخ" );
-                return false; // Return false if there is an error while copying the image
-            }
-
-
-            return true; // Return true if the image is copied successfully
-        }
-        
+       
       
 
         private bool SeveDataPepleInDataBases()
         {
-            MyToolsLibrary.CobyFileToFolder(ucImage.ImagePath, _destinationFolderPath);
-
-
+            
+             MyToolsLibrary.CobyFileToFolder(ucImaged.ImagePath, _destinationFolderPath);
+            
+            //يتاكد ان الصوره ليست الصوره التي انشاها الكمبيوتر
+            //ويتم نسخها من الملف الذي هي فيه الي الملف المحدد لصور التطبيق
 
             _People.ID = clsPeople.Add(txtbNationalNo.Text.ToString(), txtbFirstName.Text.ToString(), txtbSecondName.Text.ToString(),
             txtbThirdName.Text.ToString(), txtbLastName.Text.ToString(), (DateTime)dateTimePicker2.Value, _Gendr, txtbAddress.Text.ToString(),
-            txtbPhone.Text.ToString(), txtEmail.Text.ToString(), (int)comdbCountry.SelectedValue, ucImage.ImagePath.ToString());
-
-            // this code to copy the data from the text boxes to the clsPeople class
+            txtbPhone.Text.ToString(), txtEmail.Text.ToString(), (int)comdbCountry.SelectedValue, ucImaged.ImagePath.ToString());
+            //يضيف معلومات الشخص الي قواعد البيانات
+          
             if (_People.ID != -1)
             {
                 _Mode = enMode.Edit; // Change mode to Edit after saving
@@ -325,12 +304,46 @@ namespace FullRealProgect
 
         private void butClose_Click(object sender, EventArgs e)
         {
-             Form FormEnterPerople = new Form();
+            Form FormEnterPerople = new Form();
             FormEnterPerople = this.FindForm();
             FormEnterPerople.Close();
 
         }
 
        
+
+
+
+        private void txtNationallValidating(object sender, CancelEventArgs e )
+        {
+            TextBox text = sender as TextBox;
+            //this code to check if the text box is empty or not
+            if (string.IsNullOrWhiteSpace(text.Text))
+            {
+                errorProvider1.SetError(text, "This textBox cannot be empty");
+                e.Cancel = true; // Cancel the event if the text box is empty
+                butSeve.Enabled = false;
+            }
+            else if (clsPeople.IsFindNationalNo(txtbNationalNo.Text))
+            {
+                errorProvider1.SetError(text, "رقم الهوية موجود في النظام");
+                e.Cancel = true; // Cancel the event if the text box is empty
+                butSeve.Enabled = false;
+            }
+            else
+            {
+                errorProvider1.SetError(text, ""); // Clear the error if the text box is filled
+                butSeve.Enabled = true; // Enable the save button if all fields are filled
+            }
+        }
+
+        private void txtbNationalNo_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void ucImaged_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

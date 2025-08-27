@@ -53,34 +53,64 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Button.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Button.Designer.cs">
-      <DependentUpon>Button.cs</DependentUpon>
-    </Compile>
     <Compile Include="EnterPeople.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="EnterPeople.Designer.cs">
       <DependentUpon>EnterPeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAdd-EditPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdd-EditPersonInfo.Designer.cs">
+      <DependentUpon>FormAdd-EditPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPersonDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPersonDetails.Designer.cs">
+      <DependentUpon>FormPersonDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPeople.Designer.cs">
+      <DependentUpon>FormPeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Button.resx">
-      <DependentUpon>Button.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="ucFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucFilter.Designer.cs">
+      <DependentUpon>ucFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucPersonInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucPersonInformation.Designer.cs">
+      <DependentUpon>ucPersonInformation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EnterPeople.resx">
       <DependentUpon>EnterPeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdd-EditPersonInfo.resx">
+      <DependentUpon>FormAdd-EditPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPersonDetails.resx">
+      <DependentUpon>FormPersonDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPeople.resx">
+      <DependentUpon>FormPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +122,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ucFilter.resx">
+      <DependentUpon>ucFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucPersonInformation.resx">
+      <DependentUpon>ucPersonInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

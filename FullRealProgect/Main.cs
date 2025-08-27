@@ -12,21 +12,16 @@ using MyFirstClassLibrary;
 using MyControlsLibrary;
 namespace FullRealProgect
 {
-    public partial class Form1 : Form
+    public partial class FormMain : Form
     {
-        public Form1()
+        public FormMain()
         {
             InitializeComponent();
         }
-       EnterPeople E = new EnterPeople(1033);
+       
         private void Form1_Load(object sender, EventArgs e)
         {
-           butApplications.text="التطبيقات";
-            button2.text = "الناس";
-         this.Controls.Add(E);
-
-            butApplications.Text = "التطبيقات";
-        }
+    }
 
         private void enterPeople1_Load(object sender, EventArgs e)
         {
@@ -42,12 +37,11 @@ namespace FullRealProgect
         {
         }
 
-        private void button2_Load(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
-           
+            FormPeople For = new FormPeople();
+            For.ShowDialog();
         }
-
-     
     }
 }

@@ -225,7 +225,163 @@ namespace ContactsDataAccessLayer
             return (Result > 0);
 
         }
-    } 
+
+
+
+        public static bool FindNationalNO(string NationalNo) {
+            bool Result = false;
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"select * from People where People.NationalNo=@NationalNO;";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@NationalNO", NationalNo);
+
+            try
+            {
+                Connection.Open();
+                SqlDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
+                {
+                    Result = true;
+                }
+                Reader.Close();
+
+            }
+            finally
+            {
+                Connection.Close();
+
+            }
+            return Result;
+        }
+
+        public static DataTable GetAllPeople()
+        {
+                       SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            DataTable Table = new DataTable();
+            try
+            {
+                Connection.Open();
+                SqlDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
+                {
+                    Table.Load(Reader);
+                  
+                    Reader.Close();
+                }
+            }
+            finally
+            {
+                Connection.Close();
+            }
+            return Table;
+        }
+        public static DataTable GetPeopleID(int ID)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @ID ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@ID", ID);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+                  
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+        public static DataTable GetPeopleNationalNo(string NationalNo)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @ID ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@ID", NationalNo);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+        public static DataTable GetPeopleName(string Name)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @ID ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@ID", Name);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+
+
+
+
+
+    }
 
 
 }

@@ -16,7 +16,14 @@ namespace ContactsBusinessLayer
             return clsCountryDataAccess.GetAllCountry();
         }
 
-
+        static public string GetCountryNameByID(int countryID)
+        {
+                       if (countryID <= 0)
+            {
+                return "";
+            }
+            return clsCountryDataAccess.GetCountryNameByID(countryID);
+        }
 
 
 

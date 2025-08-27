@@ -67,5 +67,32 @@ namespace ContactsDataAccessLayer
             }
             return CountryID;
         }
+
+        static public string GetCountryNameByID(int CountryID)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Qery = @"select CountryName from Countries where CountryID=@CountryID;";
+            SqlCommand Command = new SqlCommand(Qery, Connection);
+        
+            Command.Parameters.AddWithValue(@"CountryID", CountryID);
+            string Country = "";
+            try
+            {
+                Connection.Open();
+        object Result= Command.ExecuteScalar();
+            
+                if (Result != null)
+                {
+                  Country=Result.ToString();
+                }
+                
+            }
+            catch
+            {
+
+                return null;
+            }
+            return Country;
+        }
     }
 }

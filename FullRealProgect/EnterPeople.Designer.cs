@@ -71,7 +71,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.labID = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.ucImage = new MyControlsLibrary.UserControl1();
+            this.ucImaged = new MyControlsLibrary.UserControl1();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -273,7 +273,8 @@
             this.txtbNationalNo.Name = "txtbNationalNo";
             this.txtbNationalNo.Size = new System.Drawing.Size(197, 24);
             this.txtbNationalNo.TabIndex = 61;
-            this.txtbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.ValidatingTextBoxs);
+            this.txtbNationalNo.TextChanged += new System.EventHandler(this.txtbNationalNo_TextChanged);
+            this.txtbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationallValidating);
             // 
             // txtbFirstName
             // 
@@ -483,20 +484,21 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // ucImage
+            // ucImaged
             // 
-            this.ucImage.ImagePath = "";
-            this.ucImage.Location = new System.Drawing.Point(886, 173);
-            this.ucImage.MaximumSize = new System.Drawing.Size(326, 340);
-            this.ucImage.Name = "ucImage";
-            this.ucImage.Size = new System.Drawing.Size(259, 269);
-            this.ucImage.TabIndex = 88;
+            this.ucImaged.ImagePath = "";
+            this.ucImaged.Location = new System.Drawing.Point(874, 172);
+            this.ucImaged.MaximumSize = new System.Drawing.Size(326, 340);
+            this.ucImaged.Name = "ucImaged";
+            this.ucImaged.Size = new System.Drawing.Size(259, 288);
+            this.ucImaged.TabIndex = 88;
+            this.ucImaged.Load += new System.EventHandler(this.ucImaged_Load);
             // 
             // EnterPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ucImage);
+            this.Controls.Add(this.ucImaged);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.dateTimePicker2);
@@ -604,5 +606,6 @@
         private System.Windows.Forms.Label label13;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private MyControlsLibrary.UserControl1 ucImage;
+        private MyControlsLibrary.UserControl1 ucImaged;
     }
 }

@@ -12,6 +12,59 @@ namespace ContactsBusinessLayer
 {
     public class clsPeople
     {
+      
+        public clsPeople(int ID)
+        {
+            clsPeople People = FindByID(ID);
+            if (People != null)
+            {
+                this.ID = People.ID;
+                this.NationalNO = People.NationalNO;
+                this.FirstName = People.FirstName;
+                this.SecondName = People.SecondName;
+                this.ThirdName = People.ThirdName;
+                this.LastName = People.LastName;
+                this.DateOfBirth = People.DateOfBirth;
+                this.Gendor = People.Gendor;
+                this.Address = People.Address;
+                this.Phone = People.Phone;
+                this.Email = People.Email;
+                this.NationaltyCountryID = People.NationaltyCountryID;
+                this.ImagePath = People.ImagePath;
+            }
+            else
+            {
+                this.ID = 0;
+                this.NationalNO = "";
+                this.FirstName = "";
+                this.SecondName = "";
+                this.ThirdName = "";
+                this.LastName = "";
+                this.DateOfBirth = DateTime.MinValue;
+                this.Gendor = false;
+                this.Address = "";
+                this.Phone = "";
+                this.Email = "";
+                this.NationaltyCountryID = -1;
+                this.ImagePath = "";
+            }
+        }
+        public clsPeople()
+        {
+            this.ID = 0;
+            this.NationalNO = "";
+            this.FirstName = "";
+            this.SecondName = "";
+            this.ThirdName = "";
+            this.LastName = "";
+            this.DateOfBirth = DateTime.MinValue;
+            this.Gendor = false;
+            this.Address = "";
+            this.Phone = "";
+            this.Email = "";
+            this.NationaltyCountryID = -1;
+            this.ImagePath = "";
+        }
         public int ID { get; set; }
         public string NationalNO { get; set; }
         public string FirstName { get; set; }
@@ -25,6 +78,13 @@ namespace ContactsBusinessLayer
         public string Email { get; set; }
         public int NationaltyCountryID { get; set; }
         public string ImagePath { get; set; }
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + SecondName + " " + ThirdName + " " + LastName;
+            }
+        }
 
         static public int Add(string NationalNO, string FirstName, string SecondName, string ThirdName, string LastName, DateTime DateOfBirth,
              bool Gendor, string Address, string Phone, string Email, int NationaltyCountryID, string ImagePath)
@@ -91,6 +151,22 @@ namespace ContactsBusinessLayer
                 return clsPeopleDataAccess.DeletePerson(ID,ImagePath); 
              
         }
+        public static bool IsFindNationalNo(string NationalNo)
+        {
+            return clsPeopleDataAccess.FindNationalNO(NationalNo);
+
+        }
+
+        public static DataTable GetAllPeople()
+        {
+            return clsPeopleDataAccess.GetAllPeople();
+        }
+
+        //public static DataTable GetPeopleID(int ID)
+        //{
+            
+        //}
+    
     }
     }
 
