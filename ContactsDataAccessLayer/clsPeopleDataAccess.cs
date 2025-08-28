@@ -313,9 +313,9 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleNationalNo(string NationalNo)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @ID ";
+            string Query = @"SELECT * FROM People WHERE PersonID = @NationalNo ";
             SqlCommand Command = new SqlCommand(Query, Connection);
-            Command.Parameters.AddWithValue("@ID", NationalNo);
+            Command.Parameters.AddWithValue("@NationalNo", NationalNo);
             DataTable Table = new DataTable();
 
             try
@@ -343,12 +343,12 @@ namespace ContactsDataAccessLayer
             }
             return Table;
         }
-        public static DataTable GetPeopleName(string Name)
+        public static DataTable GetPeopleFirstName(string FirstName)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @ID ";
+            string Query = @"SELECT * FROM People WHERE PersonID = @FirstName ";
             SqlCommand Command = new SqlCommand(Query, Connection);
-            Command.Parameters.AddWithValue("@ID", Name);
+            Command.Parameters.AddWithValue("@FirstName", FirstName);
             DataTable Table = new DataTable();
 
             try
@@ -377,9 +377,241 @@ namespace ContactsDataAccessLayer
             return Table;
         }
 
+        public static DataTable GetPeopleSecondName(string SecondNameame)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @SecondName ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@SecondName", SecondNameame);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
 
 
+                    Reader.Close();
 
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+
+        public static DataTable GetPeopleThirdName(string ThirdName)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @ThirdName ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@ThirdName", ThirdName);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+
+        public static DataTable GetPeopleLastName(string LastName)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @LastName ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@LastName", LastName);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+
+        public static DataTable GetPeopleNationalty(string Nationalty)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @Nationalty ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@Nationalty", Nationalty);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+
+        public static DataTable GetPeopleGendor(bool Gendor)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @Gendor ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@Gendor", Gendor);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+        public static DataTable GetPeoplePhone(string Phone)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @Phone ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@Phone", Phone);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
+        public static DataTable GetPeopleEmail(string Email)
+        {
+            SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string Query = @"SELECT * FROM People WHERE PersonID = @Email ";
+            SqlCommand Command = new SqlCommand(Query, Connection);
+            Command.Parameters.AddWithValue("@Email", Email);
+            DataTable Table = new DataTable();
+
+            try
+            {
+                Connection.Open();
+
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read())
+                {
+
+                    Table.Load(Reader);
+
+
+                    Reader.Close();
+
+                }
+            }
+
+            finally
+            {
+
+                Connection.Close();
+
+            }
+            return Table;
+        }
 
     }
 

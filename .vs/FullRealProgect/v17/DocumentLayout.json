@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|c:\\users\\yasee\\source\\repos\\fullrealprogect\\fullrealprogect\\ucfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|solutionrelative:fullrealprogect\\ucfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|c:\\users\\yasee\\source\\repos\\fullrealprogect\\fullrealprogect\\ucfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|solutionrelative:fullrealprogect\\ucfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|c:\\users\\yasee\\source\\repos\\fullrealprogect\\fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|solutionrelative:fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|C:\\Users\\yasee\\source\\repos\\FullRealProgect\\fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|solutionrelative:fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9851A93F-B26C-458D-9311-77B5B7D62B2B}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|c:\\users\\yasee\\source\\repos\\fullrealprogect\\contactsdataaccesslayer\\clspeopledataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9851A93F-B26C-458D-9311-77B5B7D62B2B}|ContactsDataAccessLayer\\ContactsDataAccessLayer.csproj|solutionrelative:contactsdataaccesslayer\\clspeopledataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A554C73-5586-4884-BEC7-9423CB7965D0}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|C:\\Users\\yasee\\source\\repos\\FullRealProgect\\contactsbusinesslayer\\clspeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7A554C73-5586-4884-BEC7-9423CB7965D0}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|c:\\users\\yasee\\source\\repos\\fullrealprogect\\contactsbusinesslayer\\clspeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7A554C73-5586-4884-BEC7-9423CB7965D0}|ContactsBusinessLayer\\ContactsBusinessLayer.csproj|solutionrelative:contactsbusinesslayer\\clspeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|C:\\Users\\yasee\\source\\repos\\FullRealProgect\\fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{92117736-933D-43C3-98CD-88AB5D815AB3}|FullRealProgect\\FullRealProgect.csproj|solutionrelative:fullrealprogect\\formpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,19 +39,70 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ucFilter.cs",
+              "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\ucFilter.cs",
+              "RelativeDocumentMoniker": "FullRealProgect\\ucFilter.cs",
+              "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\ucFilter.cs",
+              "RelativeToolTip": "FullRealProgect\\ucFilter.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAlwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T07:01:23.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "clsPeople.cs",
+              "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsBusinessLayer\\clsPeople.cs",
+              "RelativeDocumentMoniker": "ContactsBusinessLayer\\clsPeople.cs",
+              "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsBusinessLayer\\clsPeople.cs",
+              "RelativeToolTip": "ContactsBusinessLayer\\clsPeople.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAUwKwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T06:41:41.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "clsPeopleDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsDataAccessLayer\\clsPeopleDataAccess.cs",
+              "RelativeDocumentMoniker": "ContactsDataAccessLayer\\clsPeopleDataAccess.cs",
+              "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsDataAccessLayer\\clsPeopleDataAccess.cs",
+              "RelativeToolTip": "ContactsDataAccessLayer\\clsPeopleDataAccess.cs",
+              "ViewState": "AgIAAOEBAAAAAAAAAAAiwEUCAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T06:23:38.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ucFilter.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\ucFilter.cs",
+              "RelativeDocumentMoniker": "FullRealProgect\\ucFilter.cs",
+              "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\ucFilter.cs [Design]",
+              "RelativeToolTip": "FullRealProgect\\ucFilter.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-28T06:23:18.811Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "FormPeople.cs",
               "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\FormPeople.cs",
               "RelativeDocumentMoniker": "FullRealProgect\\FormPeople.cs",
               "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\FormPeople.cs",
               "RelativeToolTip": "FullRealProgect\\FormPeople.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAqwEAAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAAiwEAAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T19:39:19.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "FormPeople.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\FullRealProgect\\FormPeople.cs",
               "RelativeDocumentMoniker": "FullRealProgect\\FormPeople.cs",
@@ -48,19 +111,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-27T07:16:33.382Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "clsPeople.cs",
-              "DocumentMoniker": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsBusinessLayer\\clsPeople.cs",
-              "RelativeDocumentMoniker": "ContactsBusinessLayer\\clsPeople.cs",
-              "ToolTip": "C:\\Users\\yasee\\source\\repos\\FullRealProgect\\ContactsBusinessLayer\\clsPeople.cs",
-              "RelativeToolTip": "ContactsBusinessLayer\\clsPeople.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAmwJYAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-27T07:03:01.138Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -28,13 +28,14 @@ namespace FullRealProgect
              InitializeComponent();
             EnterPeople en = new EnterPeople(ID);
             this.Controls.Add(en);
+           
+            flowLayoutPanel1.Controls.Add(en);
             en.Dock = DockStyle.Bottom;
-
 
             labTitle.Text = "Eidte Person Info";
 
         }
 
-    
+       
     }
 }

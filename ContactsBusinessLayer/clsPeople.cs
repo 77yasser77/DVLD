@@ -162,11 +162,44 @@ namespace ContactsBusinessLayer
             return clsPeopleDataAccess.GetAllPeople();
         }
 
-        //public static DataTable GetPeopleID(int ID)
-        //{
-            
-        //}
-    
+        public static DataTable GetPeopleID(int ID)
+        {
+            return clsPeopleDataAccess.GetPeopleID(ID);    
+        }
+        public static DataTable GetFirsName(string FirstName)
+        {
+            return clsPeopleDataAccess.GetPeopleFirstName(FirstName);
+        }
+        public static DataTable GetSecondName(string SecondName)
+        {
+            return clsPeopleDataAccess.GetPeopleSecondName(SecondName);
+        }
+        public static DataTable GetThirdName(string ThirdName)
+        {
+            return clsPeopleDataAccess.GetPeopleThirdName(ThirdName);
+        }
+        public static DataTable GetLastName(string LastName)
+        {
+            return clsPeopleDataAccess.GetPeopleLastName(LastName);
+        }
+        public static DataTable GetNationalty(string Nationalty)
+        {
+            return clsPeopleDataAccess.GetPeopleNationalty(Nationalty);
+        }
+
+        public static DataTable GetGender(bool Gender)
+        {
+            return clsPeopleDataAccess.GetPeopleGendor(Gender);
+        }
+        public static DataTable GetPhone(string Phone)
+        {
+            return clsPeopleDataAccess.GetPeoplePhone(Phone);
+        }
+        public static DataTable GetEmail(string Email)
+        {
+            return clsPeopleDataAccess.GetPeopleEmail(Email);
+        }
+
     }
-    }
+}
 

@@ -23,6 +23,12 @@ namespace FullRealProgect
             ucPersonInformation PersonInfromation = new ucPersonInformation(_PeronID);
             PersonInfromation.Dock = DockStyle.Bottom;
             this.Controls.Add(PersonInfromation);
+            flowLayoutPanel1.Controls.Add(PersonInfromation);
+        }
+
+        private void butClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
