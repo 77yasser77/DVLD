@@ -23,4 +23,6 @@ C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\obj\Debug\FullRealPr
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\obj\Debug\FullRealProgect.ucPersonInformation.resources
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\obj\Debug\FullRealProgect.FormPersonDetails.resources
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyControlsLibrary.dll
+C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\FullRealProgect.xml
+C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\bin\Debug\MyFirstClassLibrary.xml
 C:\Users\yasee\source\repos\FullRealProgect\FullRealProgect\obj\Debug\FullRealProgect.exe.config

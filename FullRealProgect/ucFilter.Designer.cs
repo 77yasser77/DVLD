@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.flp = new System.Windows.Forms.FlowLayoutPanel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.rdF = new System.Windows.Forms.RadioButton();
+            this.rdM = new System.Windows.Forms.RadioButton();
+            this.txtBox = new System.Windows.Forms.TextBox();
+            this.cmbBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,9 +66,9 @@
             "Gender",
             "Phone",
             "Email"});
-            this.comboBox1.Location = new System.Drawing.Point(113, 3);
+            this.comboBox1.Location = new System.Drawing.Point(111, 3);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 24);
+            this.comboBox1.Size = new System.Drawing.Size(168, 24);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -78,28 +84,73 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(285, 35);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(282, 35);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // flp
+            // errorProvider1
             // 
-            this.flp.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flp.Location = new System.Drawing.Point(288, 0);
-            this.flp.Name = "flp";
-            this.flp.Size = new System.Drawing.Size(330, 35);
-            this.flp.TabIndex = 3;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // rdF
+            // 
+            this.rdF.AutoSize = true;
+            this.rdF.Location = new System.Drawing.Point(399, 7);
+            this.rdF.Name = "rdF";
+            this.rdF.Size = new System.Drawing.Size(55, 21);
+            this.rdF.TabIndex = 3;
+            this.rdF.TabStop = true;
+            this.rdF.Text = "انثى";
+            this.rdF.UseVisualStyleBackColor = true;
+            this.rdF.CheckedChanged += new System.EventHandler(this.rdF_CheckedChanged);
+            // 
+            // rdM
+            // 
+            this.rdM.AutoSize = true;
+            this.rdM.Location = new System.Drawing.Point(284, 6);
+            this.rdM.Name = "rdM";
+            this.rdM.Size = new System.Drawing.Size(49, 21);
+            this.rdM.TabIndex = 4;
+            this.rdM.TabStop = true;
+            this.rdM.Text = "ذكر";
+            this.rdM.UseVisualStyleBackColor = true;
+            this.rdM.CheckedChanged += new System.EventHandler(this.rdM_CheckedChanged);
+            // 
+            // txtBox
+            // 
+            this.txtBox.Location = new System.Drawing.Point(284, 3);
+            this.txtBox.Name = "txtBox";
+            this.txtBox.Size = new System.Drawing.Size(224, 24);
+            this.txtBox.TabIndex = 5;
+            this.txtBox.TextChanged += new System.EventHandler(this.txtBox_TextChanged);
+            this.txtBox.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBox_Validating);
+            // 
+            // cmbBox
+            // 
+            this.cmbBox.FormattingEnabled = true;
+            this.cmbBox.Location = new System.Drawing.Point(281, 3);
+            this.cmbBox.Name = "cmbBox";
+            this.cmbBox.Size = new System.Drawing.Size(227, 24);
+            this.cmbBox.TabIndex = 7;
+            this.cmbBox.SelectedIndexChanged += new System.EventHandler(this.cmbBox_SelectedIndexChanged);
+            this.cmbBox.Validating += new System.ComponentModel.CancelEventHandler(this.cmbBox_Validating);
             // 
             // ucFilter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.flp);
+            this.Controls.Add(this.cmbBox);
+            this.Controls.Add(this.txtBox);
+            this.Controls.Add(this.rdM);
+            this.Controls.Add(this.rdF);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ucFilter";
-            this.Size = new System.Drawing.Size(618, 35);
+            this.Size = new System.Drawing.Size(511, 35);
+            this.Load += new System.EventHandler(this.ucFilter_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -108,6 +159,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flp;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.RadioButton rdM;
+        private System.Windows.Forms.RadioButton rdF;
+        private System.Windows.Forms.ComboBox cmbBox;
+        private System.Windows.Forms.TextBox txtBox;
     }
 }

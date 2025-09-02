@@ -273,7 +273,6 @@
             this.txtbNationalNo.Name = "txtbNationalNo";
             this.txtbNationalNo.Size = new System.Drawing.Size(197, 24);
             this.txtbNationalNo.TabIndex = 61;
-            this.txtbNationalNo.TextChanged += new System.EventHandler(this.txtbNationalNo_TextChanged);
             this.txtbNationalNo.Validating += new System.ComponentModel.CancelEventHandler(this.txtNationallValidating);
             // 
             // txtbFirstName
@@ -487,12 +486,12 @@
             // ucImaged
             // 
             this.ucImaged.ImagePath = "";
+            this.ucImaged.ImageSettings = null;
             this.ucImaged.Location = new System.Drawing.Point(874, 172);
             this.ucImaged.MaximumSize = new System.Drawing.Size(326, 340);
             this.ucImaged.Name = "ucImaged";
             this.ucImaged.Size = new System.Drawing.Size(259, 288);
             this.ucImaged.TabIndex = 88;
-            this.ucImaged.Load += new System.EventHandler(this.ucImaged_Load);
             // 
             // EnterPeople
             // 

@@ -346,7 +346,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleFirstName(string FirstName)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @FirstName ";
+            string Query = @"SELECT * FROM People WHERE FirstName = @FirstName ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@FirstName", FirstName);
             DataTable Table = new DataTable();
@@ -376,11 +376,11 @@ namespace ContactsDataAccessLayer
             }
             return Table;
         }
-
+        
         public static DataTable GetPeopleSecondName(string SecondNameame)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @SecondName ";
+            string Query = @"SELECT * FROM People WHERE SecondName = @SecondName ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@SecondName", SecondNameame);
             DataTable Table = new DataTable();
@@ -414,7 +414,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleThirdName(string ThirdName)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @ThirdName ";
+            string Query = @"SELECT * FROM People WHERE ThirdName = @ThirdName ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@ThirdName", ThirdName);
             DataTable Table = new DataTable();
@@ -448,7 +448,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleLastName(string LastName)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @LastName ";
+            string Query = @"SELECT * FROM People WHERE LastName = @LastName ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@LastName", LastName);
             DataTable Table = new DataTable();
@@ -479,10 +479,10 @@ namespace ContactsDataAccessLayer
             return Table;
         }
 
-        public static DataTable GetPeopleNationalty(string Nationalty)
+        public static DataTable GetPeopleNationalty(int Nationalty)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @Nationalty ";
+            string Query = @"SELECT * FROM People WHERE NationalityCountryID = @Nationalty ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@Nationalty", Nationalty);
             DataTable Table = new DataTable();
@@ -516,7 +516,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleGendor(bool Gendor)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @Gendor ";
+            string Query = @"SELECT * FROM People WHERE Gendor = @Gendor ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@Gendor", Gendor);
             DataTable Table = new DataTable();
@@ -549,7 +549,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeoplePhone(string Phone)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @Phone ";
+            string Query = @"SELECT * FROM People WHERE Phone = @Phone ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@Phone", Phone);
             DataTable Table = new DataTable();
@@ -582,7 +582,7 @@ namespace ContactsDataAccessLayer
         public static DataTable GetPeopleEmail(string Email)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"SELECT * FROM People WHERE PersonID = @Email ";
+            string Query = @"SELECT * FROM People WHERE Email = @Email ";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue("@Email", Email);
             DataTable Table = new DataTable();

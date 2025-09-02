@@ -92,15 +92,14 @@ namespace FullRealProgect
             //get all the countries from the clsCountry class
 
 
-            DataTable AllCountry = MyToolsLibrary.DataTableAddingData(clsCountry.AllCountry());
+            DataTable AllCountry = clsDataTable.AddingData(clsCountry.AllCountry());
 
-
-            if (!MyToolsLibrary.ComboBoxDisplayMemberAndValueMember(comdbCountry, AllCountry, "Yemen", "CountryName", "CountryID"))
+            if (!clsComboBox.DisplayMemberAndValueMember( comdbCountry, AllCountry, 191, "CountryName", "CountryID"))
             {
                 MessageBox.Show("No countries available to select.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
-
+            MessageBox.Show(comdbCountry.SelectedValue.ToString());
         }//}
         private void cobyDataClsPeopleToTools()
         {
@@ -150,7 +149,7 @@ namespace FullRealProgect
             if (ucImaged.OldImagePath != null)
             {
                 _People.ImagePath = ucImaged.ImagePath; // Set the new image path
-                MyToolsLibrary.CobyFileToFolder(ucImaged.ImagePath, _destinationFolderPath);
+                clsFile.CopyToFolder(ucImaged.ImagePath, _destinationFolderPath);
                 MessageBox.Show(ucImaged.OldImagePath.ToString() + "هذا رابط الكود القديم ");
 
                 if (!ucImaged.DeleteOldImagePath)
@@ -242,10 +241,8 @@ namespace FullRealProgect
         private bool SeveDataPepleInDataBases()
         {
             
-             MyToolsLibrary.CobyFileToFolder(ucImaged.ImagePath, _destinationFolderPath);
+             clsFile.CopyToFolder(ucImaged.ImagePath, _destinationFolderPath);//copy the image to the destination folder(نسخ الصوره الي الملف المحدد)
             
-            //يتاكد ان الصوره ليست الصوره التي انشاها الكمبيوتر
-            //ويتم نسخها من الملف الذي هي فيه الي الملف المحدد لصور التطبيق
 
             _People.ID = clsPeople.Add(txtbNationalNo.Text.ToString(), txtbFirstName.Text.ToString(), txtbSecondName.Text.ToString(),
             txtbThirdName.Text.ToString(), txtbLastName.Text.ToString(), (DateTime)dateTimePicker2.Value, _Gendr, txtbAddress.Text.ToString(),
@@ -337,13 +334,5 @@ namespace FullRealProgect
             }
         }
 
-        private void txtbNationalNo_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void ucImaged_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

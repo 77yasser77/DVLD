@@ -21,7 +21,7 @@ namespace FullRealProgect
        
         private void Form1_Load(object sender, EventArgs e)
         {
-    }
+              }
 
         private void enterPeople1_Load(object sender, EventArgs e)
         {
@@ -43,5 +43,6 @@ namespace FullRealProgect
             FormPeople For = new FormPeople();
             For.ShowDialog();
         }
+
     }
 }

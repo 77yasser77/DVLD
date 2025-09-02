@@ -18,16 +18,21 @@ namespace FullRealProgect
         {
             InitializeComponent();
         }
+      
+        private void UpbeteSumRecords()
+        {
+            lblRecords.Text = dgvPeole.RowCount.ToString();
 
+        }
         private void FormPeople_Load(object sender, EventArgs e)
         {
            if(!MyToolsLibrary.GetAllDataToDataGridView(dgvPeole, clsPeople.GetAllPeople()))
             {
                 MessageBox.Show("No Data Found");
             }
+            ucFilter1.DGV = dgvPeole; 
+            UpbeteSumRecords();
 
-
-            lblRecords.Text = dgvPeole.RowCount.ToString();
 
 
         }
@@ -65,6 +70,17 @@ namespace FullRealProgect
         private void حذفToolStripMenuItem_Click(object sender, EventArgs e)
         {
             clsPeople.Delete(Convert.ToInt32(dgvPeole.CurrentRow.Cells["PersonID"].Value), dgvPeole.CurrentRow.Cells["ImagePath"].Value.ToString());
+        }
+
+        private void dgvPeole_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+     
+        private void ucFilter1_Click(object sender, EventArgs e)
+        {
+            UpbeteSumRecords();
         }
     }
 }

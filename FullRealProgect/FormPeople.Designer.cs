@@ -41,6 +41,7 @@
             this.picAdd = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblRecords = new System.Windows.Forms.Label();
+            this.ucFilter1 = new FullRealProgect.ucFilter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeole)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
@@ -56,6 +57,7 @@
             this.dgvPeole.RowTemplate.Height = 26;
             this.dgvPeole.Size = new System.Drawing.Size(1321, 367);
             this.dgvPeole.TabIndex = 0;
+            this.dgvPeole.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPeole_CellContentClick);
             // 
             // contextMenuStrip1
             // 
@@ -68,7 +70,7 @@
             this.ارسالرسالةنصيةToolStripMenuItem,
             this.اتصالToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(215, 188);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 160);
             // 
             // اظهارToolStripMenuItem
             // 
@@ -97,7 +99,7 @@
             // 
             this.حذفToolStripMenuItem.Image = global::FullRealProgect.Properties.Resources.letter_x_Amg;
             this.حذفToolStripMenuItem.Name = "حذفToolStripMenuItem";
-            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(214, 26);
+            this.حذفToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.حذفToolStripMenuItem.Text = "حذف";
             this.حذفToolStripMenuItem.Click += new System.EventHandler(this.حذفToolStripMenuItem_Click);
             // 
@@ -154,11 +156,21 @@
             this.lblRecords.TabIndex = 5;
             this.lblRecords.Text = "0";
             // 
+            // ucFilter1
+            // 
+            this.ucFilter1.DGV = null;
+            this.ucFilter1.Location = new System.Drawing.Point(16, 215);
+            this.ucFilter1.Name = "ucFilter1";
+            this.ucFilter1.Size = new System.Drawing.Size(618, 35);
+            this.ucFilter1.TabIndex = 6;
+            this.ucFilter1.Click += new System.EventHandler(this.ucFilter1_Click);
+            // 
             // FormPeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1345, 683);
+            this.Controls.Add(this.ucFilter1);
             this.Controls.Add(this.lblRecords);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.picAdd);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.PictureBox picAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblRecords;
+        private ucFilter ucFilter1;
     }
 }

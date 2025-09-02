@@ -170,6 +170,10 @@ namespace ContactsBusinessLayer
         {
             return clsPeopleDataAccess.GetPeopleFirstName(FirstName);
         }
+        public static DataTable GetPeopleNationalNo(string NationalNo)
+        {
+            return clsPeopleDataAccess.GetPeopleNationalNo(NationalNo);
+        }
         public static DataTable GetSecondName(string SecondName)
         {
             return clsPeopleDataAccess.GetPeopleSecondName(SecondName);
@@ -182,7 +186,7 @@ namespace ContactsBusinessLayer
         {
             return clsPeopleDataAccess.GetPeopleLastName(LastName);
         }
-        public static DataTable GetNationalty(string Nationalty)
+        public static DataTable GetNationalty(int Nationalty)
         {
             return clsPeopleDataAccess.GetPeopleNationalty(Nationalty);
         }
