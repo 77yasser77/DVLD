@@ -36,6 +36,9 @@ namespace FullRealProgect
 
         }
 
-       
+        private void FormAdd_EditPersonInfo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

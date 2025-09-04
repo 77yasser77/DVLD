@@ -12,59 +12,10 @@ namespace ContactsBusinessLayer
 {
     public class clsPeople
     {
-      
-        public clsPeople(int ID)
-        {
-            clsPeople People = FindByID(ID);
-            if (People != null)
-            {
-                this.ID = People.ID;
-                this.NationalNO = People.NationalNO;
-                this.FirstName = People.FirstName;
-                this.SecondName = People.SecondName;
-                this.ThirdName = People.ThirdName;
-                this.LastName = People.LastName;
-                this.DateOfBirth = People.DateOfBirth;
-                this.Gendor = People.Gendor;
-                this.Address = People.Address;
-                this.Phone = People.Phone;
-                this.Email = People.Email;
-                this.NationaltyCountryID = People.NationaltyCountryID;
-                this.ImagePath = People.ImagePath;
-            }
-            else
-            {
-                this.ID = 0;
-                this.NationalNO = "";
-                this.FirstName = "";
-                this.SecondName = "";
-                this.ThirdName = "";
-                this.LastName = "";
-                this.DateOfBirth = DateTime.MinValue;
-                this.Gendor = false;
-                this.Address = "";
-                this.Phone = "";
-                this.Email = "";
-                this.NationaltyCountryID = -1;
-                this.ImagePath = "";
-            }
-        }
-        public clsPeople()
-        {
-            this.ID = 0;
-            this.NationalNO = "";
-            this.FirstName = "";
-            this.SecondName = "";
-            this.ThirdName = "";
-            this.LastName = "";
-            this.DateOfBirth = DateTime.MinValue;
-            this.Gendor = false;
-            this.Address = "";
-            this.Phone = "";
-            this.Email = "";
-            this.NationaltyCountryID = -1;
-            this.ImagePath = "";
-        }
+        public enum enMode { Add = 0, Update = 1 }
+        public enMode Mode=enMode.Add;
+     
+        
         public int ID { get; set; }
         public string NationalNO { get; set; }
         public string FirstName { get; set; }
@@ -77,7 +28,8 @@ namespace ContactsBusinessLayer
         public string Phone { get; set; }
         public string Email { get; set; }
         public int NationaltyCountryID { get; set; }
-        public string ImagePath { get; set; }
+        private string _ImagePath;
+        public string ImagePath { get { return _ImagePath; } set { _ImagePath = value; } }
         public string FullName
         {
             get
@@ -86,60 +38,144 @@ namespace ContactsBusinessLayer
             }
         }
 
-        static public int Add(string NationalNO, string FirstName, string SecondName, string ThirdName, string LastName, DateTime DateOfBirth,
-             bool Gendor, string Address, string Phone, string Email, int NationaltyCountryID, string ImagePath)
+        clsCountry CountryInfo;
+        
+        public clsPeople()
         {
-            return clsPeopleDataAccess.AddPerson(NationalNO, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone, Email, NationaltyCountryID,
-                  ImagePath);
+            this.ID = -1;
+            this.NationalNO = "";
+            this.FirstName = "";
+            this.SecondName = "";
+            this.ThirdName = "";
+            this.LastName = "";
+            this.DateOfBirth = DateTime.Now;
+          
+            this.Address = "";
+            this.Phone = "";
+            this.Email = "";
+            this.NationaltyCountryID = -1;
+            this.ImagePath = "";
+            Mode = enMode.Add;
+        }
+        private clsPeople(int ID, string NationalNO, string FirstName, string SecondName, string ThirdName, string LastName, DateTime DateOfBirth,
+         bool Gendor, string Address, string Phone, string Email, int NationaltyCountryID, string ImagePath)
+        {
+
+            this.ID = ID;
+            this.NationalNO = NationalNO;
+            this.FirstName = FirstName;
+            this.SecondName = SecondName;
+            this.ThirdName = ThirdName;
+            this.LastName = LastName;
+            this.DateOfBirth = DateOfBirth;
+            this.Gendor = Gendor;
+            this.Address = Address;
+            this.Phone = Phone;
+            this.Email = Email;
+            this.NationaltyCountryID = NationaltyCountryID;
+            this.ImagePath = ImagePath;
+            CountryInfo = clsCountry.Find(NationaltyCountryID);
+            Mode = enMode.Update;
         }
 
-        static public clsPeople FindByID(int ID)
+         private bool _AddNew()
         {
-            clsPeople People = new clsPeople();
+         
+         this.ID=clsPeopleDataAccess.AddNewPerson(this.NationalNO, this.FirstName, this.SecondName,this.ThirdName, this.LastName, 
+             this.DateOfBirth, this.Gendor, this.Address, this.Phone, this.Email, this.NationaltyCountryID,
+                  ImagePath);
+            return (this.ID != -1);
+        }
+
+        
+
+        private bool _Update()
+        {
+           
+            return clsPeopleDataAccess.UpdatePeople(this.ID, this.NationalNO, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.DateOfBirth,
+                this.Gendor, this.Address, this.Phone, this.Email, this.NationaltyCountryID, this.ImagePath);
+
+        }
+        public static clsPeople Find(int ID)
+        {
             if (ID <= 0)
             {
                 return null;
             }
+            
             string NationalNO = "", FirstName = "", SecondName = "", ThirdName = "", LastName = "", Address = "", Phone = "", Email = "", ImagePath = "";
             bool Gendor = false;
             int NationaltyCountryID = -1;
             DateTime DateOfBirth = DateTime.MinValue;
 
 
+            bool isFound = clsPeopleDataAccess.GetPersonByID(ID, ref NationalNO, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth,
+     ref Gendor, ref Address, ref Phone, ref Email, ref NationaltyCountryID, ref ImagePath);
 
-
-            if (!clsPeopleDataAccess.GetPersonByID(ID, ref NationalNO, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth,
-     ref Gendor, ref Address, ref Phone, ref Email, ref NationaltyCountryID, ref ImagePath))
+            if (isFound)
+            {
+                return new clsPeople(ID, NationalNO, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone, Email, NationaltyCountryID
+                    , ImagePath);
+            }
+            else
             {
                 return null;
             }
-            People.ID = ID;
-            People.NationalNO = NationalNO;
-            People.FirstName = FirstName;
-            People.SecondName = SecondName;
-            People.ThirdName = ThirdName;
-            People.LastName = LastName;
-            People.DateOfBirth = DateOfBirth;
-            People.Gendor = Gendor;
-            People.Address = Address;
-            People.Phone = Phone;
-            People.Email = Email;
-            People.NationaltyCountryID = NationaltyCountryID;
-            People.ImagePath = ImagePath;
-            return People;
+              
+    
         }
-
-        public bool Update()
+        public static clsPeople Find(string NationalNo)
         {
-            if (this.ID <= 0)
+            if (NationalNo != "")
             {
-                return false;
+                return null;
             }
-            return clsPeopleDataAccess.EditPeople(this.ID, this.NationalNO, this.FirstName, this.SecondName, this.ThirdName, this.LastName, this.DateOfBirth,
-                this.Gendor, this.Address, this.Phone, this.Email, this.NationaltyCountryID, this.ImagePath);
 
+            
+            string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Address = "", Phone = "", Email = "", ImagePath = "";
+            bool Gendor = false;
+            int NationaltyCountryID = -1, ID = -1;
+            DateTime DateOfBirth = DateTime.MinValue;
+
+
+            bool isFound = clsPeopleDataAccess.GetPersonByNationalNo(NationalNo, ref ID, ref FirstName, ref SecondName, ref ThirdName, ref LastName, ref DateOfBirth,
+     ref Gendor, ref Address, ref Phone, ref Email, ref NationaltyCountryID, ref ImagePath);
+
+            if (isFound)
+            {
+                return new clsPeople(ID, NationalNo, FirstName, SecondName, ThirdName, LastName, DateOfBirth, Gendor, Address, Phone, Email, NationaltyCountryID
+                    , ImagePath);
+            }
+            else
+            {
+                return null;
+            }
+         
         }
-      
+
+
+
+        public bool Save()
+        {
+            switch (Mode)
+            {
+                case enMode.Add:
+                    {
+                        return _AddNew();      
+                    }
+                case enMode.Update:
+                    {
+                        return _Update();
+                    }
+            
+            }
+            return false;
+        }
+
+        public static DataTable GetAllPeople()
+        {
+            return clsPeopleDataAccess.GetAllPeople();
+        }
         public static bool Delete(int ID,string ImagePath)
         {
             if (ID <= 0)
@@ -148,20 +184,30 @@ namespace ContactsBusinessLayer
             }
          
             
-                return clsPeopleDataAccess.DeletePerson(ID,ImagePath); 
+                return clsPeopleDataAccess.DeletePerson(ID); 
              
         }
-        public static bool IsFindNationalNo(string NationalNo)
+
+        public static bool IsPersonExist(int ID)
         {
-            return clsPeopleDataAccess.FindNationalNO(NationalNo);
+            if (ID <= 0) { return false; }
+            return clsPeopleDataAccess.IsPeronsExist(ID);
+        }
+        public static bool IsPersonExist(string NationalNo)
+        {
+            return clsPeopleDataAccess.IsPeronsExist(NationalNo);
 
         }
 
-        public static DataTable GetAllPeople()
-        {
-            return clsPeopleDataAccess.GetAllPeople();
-        }
+      
 
+
+
+
+
+
+
+        //--------------------------------------------------------------
         public static DataTable GetPeopleID(int ID)
         {
             return clsPeopleDataAccess.GetPeopleID(ID);    

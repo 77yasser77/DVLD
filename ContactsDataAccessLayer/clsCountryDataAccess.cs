@@ -15,7 +15,7 @@ namespace ContactsDataAccessLayer
             //this is code to get all countries from the database
             DataTable AllCountry = new DataTable();
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"select * from countries;";
+            string Query = @"select * from countries order by CountryName;";
       
             SqlCommand Command = new SqlCommand(Query, Connection);
 
@@ -43,35 +43,36 @@ namespace ContactsDataAccessLayer
 
         }
 
-        static public int GetCountryID(string CountryName)
+        static public bool GetCountryByName(string CountryName,ref int CountryID  )
         {
             //this is code to get the country ID from the database
-            int CountryID = -1;
+            int ID = -1;
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Query = @"select CountryID from countries where CountryName=@CountryName;";
+            string Query = @"select * from countries where CountryName=@CountryName;";
             SqlCommand Command = new SqlCommand(Query, Connection);
             Command.Parameters.AddWithValue(@"CountryName", CountryName);
             try
             {
                 Connection.Open();
-                object Result = Command.ExecuteScalar();
-                if (Result != null)
+                SqlDataReader Reader = Command.ExecuteReader();
+                if (Reader.Read())
                 {
-                    CountryID = (int)Result;
+                    CountryID = Convert.ToInt32(Reader["CountryID"]);
+                    ID = CountryID;
                 }
-
+                Reader.Close();
             }
             finally
             {
                 Connection.Close();
             }
-            return CountryID;
+            return (ID != -1) ;
         }
 
-        static public string GetCountryNameByID(int CountryID)
+        static public bool GetCountryByID(int CountryID,ref string CountryName)
         {
             SqlConnection Connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
-            string Qery = @"select CountryName from Countries where CountryID=@CountryID;";
+            string Qery = @"select * from Countries where CountryID=@CountryID;";
             SqlCommand Command = new SqlCommand(Qery, Connection);
         
             Command.Parameters.AddWithValue(@"CountryID", CountryID);
@@ -79,20 +80,27 @@ namespace ContactsDataAccessLayer
             try
             {
                 Connection.Open();
-        object Result= Command.ExecuteScalar();
-            
-                if (Result != null)
-                {
-                  Country=Result.ToString();
+                SqlDataReader Reader = Command.ExecuteReader();
+
+                if (Reader.Read()) {
+                    Country = Reader["CountryName"] as string;
+                    CountryName = Country;
                 }
-                
+                Reader.Close();
+
             }
             catch
             {
 
-                return null;
+                return false;
             }
-            return Country;
+            finally
+            {
+                Connection.Close();
+            }
+           
+            return (Country!="");
         }
+
     }
 }

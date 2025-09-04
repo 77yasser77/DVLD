@@ -40,7 +40,7 @@
             this.labTitle.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.labTitle.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labTitle.ForeColor = System.Drawing.Color.Red;
-            this.labTitle.Location = new System.Drawing.Point(458, 38);
+            this.labTitle.Location = new System.Drawing.Point(458, 60);
             this.labTitle.Name = "labTitle";
             this.labTitle.Size = new System.Drawing.Size(712, 49);
             this.labTitle.TabIndex = 1;
@@ -57,15 +57,15 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 87);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1173, 109);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 87);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 109);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1173, 628);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1173, 606);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // FormAdd_EditPersonInfo
@@ -75,10 +75,12 @@
             this.ClientSize = new System.Drawing.Size(1173, 715);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximumSize = new System.Drawing.Size(1191, 762);
-            this.MinimumSize = new System.Drawing.Size(1191, 762);
+            this.MinimumSize = new System.Drawing.Size(1191, 694);
             this.Name = "FormAdd_EditPersonInfo";
             this.Text = "Add/Edit Person Info";
+            this.Load += new System.EventHandler(this.FormAdd_EditPersonInfo_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

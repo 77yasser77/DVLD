@@ -54,22 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EnterPeople.cs">
+    <Compile Include="People\Controls\EnterPeople.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="EnterPeople.Designer.cs">
+    <Compile Include="People\Controls\EnterPeople.Designer.cs">
       <DependentUpon>EnterPeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdd-EditPersonInfo.cs">
+    <Compile Include="People\FormAdd-EditPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdd-EditPersonInfo.Designer.cs">
+    <Compile Include="People\FormAdd-EditPersonInfo.Designer.cs">
       <DependentUpon>FormAdd-EditPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPersonDetails.cs">
+    <Compile Include="People\FormPersonDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPersonDetails.Designer.cs">
+    <Compile Include="People\FormPersonDetails.Designer.cs">
       <DependentUpon>FormPersonDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -78,39 +78,39 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPeople.cs">
+    <Compile Include="People\FormPeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPeople.Designer.cs">
+    <Compile Include="People\FormPeople.Designer.cs">
       <DependentUpon>FormPeople.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucFilter.cs">
+    <Compile Include="People\Controls\ucFilter.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucFilter.Designer.cs">
+    <Compile Include="People\Controls\ucFilter.Designer.cs">
       <DependentUpon>ucFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucPersonInformation.cs">
+    <Compile Include="People\Controls\ucPersonInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucPersonInformation.Designer.cs">
+    <Compile Include="People\Controls\ucPersonInformation.Designer.cs">
       <DependentUpon>ucPersonInformation.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EnterPeople.resx">
+    <EmbeddedResource Include="People\Controls\EnterPeople.resx">
       <DependentUpon>EnterPeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdd-EditPersonInfo.resx">
+    <EmbeddedResource Include="People\FormAdd-EditPersonInfo.resx">
       <DependentUpon>FormAdd-EditPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPersonDetails.resx">
+    <EmbeddedResource Include="People\FormPersonDetails.resx">
       <DependentUpon>FormPersonDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPeople.resx">
+    <EmbeddedResource Include="People\FormPeople.resx">
       <DependentUpon>FormPeople.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -123,10 +123,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucFilter.resx">
+    <EmbeddedResource Include="People\Controls\ucFilter.resx">
       <DependentUpon>ucFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucPersonInformation.resx">
+    <EmbeddedResource Include="People\Controls\ucPersonInformation.resx">
       <DependentUpon>ucPersonInformation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
